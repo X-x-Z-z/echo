@@ -1,0 +1,23 @@
+[package]
+name = "echo-ivc-prover"
+version.workspace = true
+edition = "2024"
+license = "MIT OR Apache-2.0"
+publish = false
+description = "Lostecho recursive proof prover over GF(2)."
+
+[features]
+# Forwarded to echo-ivc-core.
+hash-count = ["echo-ivc-core/hash-count"]
+unsound-challenger = ["echo-ivc-core/unsound-challenger"]
+
+[dependencies]
+echo-ivc-core = { path = "../echo_ivc_core" }
+rayon = "1"
+serde = { version = "1", features = ["derive"] }
+bincode = "1"
+
+[dev-dependencies]
+echo-ivc-core = { path = "../echo_ivc_core", features = ["unsound-challenger"] }
+echo_core = { path = "../echo_core" }
+echo_poseidon2b = { path = "../echo_poseidon2b" }

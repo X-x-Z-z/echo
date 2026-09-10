@@ -1,0 +1,11 @@
+[package]
+name = "echo_fri"
+version.workspace = true
+edition = "2021"
+
+[dependencies]
+echo_core = { path = "../echo_core" }
+echo_poseidon2b = { path = "../echo_poseidon2b" }
+rayon = "1.10"
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }

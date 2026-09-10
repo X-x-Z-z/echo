@@ -1,0 +1,19 @@
+[package]
+name = "echo_recursive"
+version.workspace = true
+edition = "2021"
+
+[dependencies]
+echo_core = { path = "../echo_core" }
+echo_poseidon2b = { path = "../echo_poseidon2b" }
+echo_chain = { path = "../echo_chain" }
+echo_tx = { path = "../echo_tx" }
+echo_gkr = { path = "../echo_gkr" }
+echo_fri = { path = "../echo_fri" }
+echo_fri_binius = { path = "../echo_fri_binius" }
+echo-ivc-core = { path = "../echo_ivc_core" }
+echo-ivc-prover = { path = "../echo_ivc_prover" }
+rayon = "1"
+serde = { version = "1", features = ["derive"] }
+bincode = "1"
+tracing = { workspace = true }

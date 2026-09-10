@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.lostecho.wallet</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>Apache-2.0</project_license>
+  <name>Lostecho</name>
+  <summary>Private proof-native wallet</summary>
+  <description>
+    <p>
+      Lostecho is a native wallet for the ECHO network. It supervises its
+      bundled full node locally, so the wallet can be used without a terminal
+      or a separately managed daemon.
+    </p>
+  </description>
+  <launchable type="desktop-id">org.lostecho.wallet.desktop</launchable>
+  <icon type="stock">org.lostecho.wallet</icon>
+  <provides>
+    <binary>lostecho-gui</binary>
+  </provides>
+  <categories>
+    <category>Finance</category>
+    <category>Network</category>
+  </categories>
+  <developer id="org.lostecho">
+    <name>Lostecho</name>
+  </developer>
+  <url type="homepage">https://lostecho.org/</url>
+  <url type="bugtracker">https://github.com/????/lostecho/issues</url>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="@VERSION@" date="@RELEASE_DATE@"/>
+  </releases>
+</component>

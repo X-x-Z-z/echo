@@ -1,0 +1,19 @@
+[package]
+name = "echo_mempool"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+echo_chain    = { path = "../echo_chain" }
+echo_gkr      = { path = "../echo_gkr" }
+echo_tx       = { path = "../echo_tx" }
+echo_core     = { path = "../echo_core" }
+echo_poseidon2b = { path = "../echo_poseidon2b" }
+tokio         = { workspace = true }
+tracing       = { workspace = true }
+thiserror     = { workspace = true }
+
+[dev-dependencies]
+tempfile = "3"
+tokio    = { workspace = true }

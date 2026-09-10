@@ -1,0 +1,11 @@
+Package: lostecho-gui
+Version: @VERSION@
+Section: utils
+Priority: optional
+Architecture: @ARCHITECTURE@
+Maintainer: Lostecho <dev@lostecho.org>
+Depends: libc6 (>= 2.35), libgcc-s1, xdg-desktop-portal
+Homepage: https://lostecho.org/
+Description: Native Lostecho wallet
+ Lostecho wallet with its private, locally supervised full node.
+ Wallet data remains in the user's home directory when the package is removed.

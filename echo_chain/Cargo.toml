@@ -1,0 +1,25 @@
+[package]
+name = "echo_chain"
+version.workspace = true
+edition = "2021"
+license = "Apache-2.0"
+
+[features]
+# Isolated live fork tests only. Never enable for a public-network release.
+isolated-v1-1-testnet = []
+
+[dependencies]
+tracing = { workspace = true }
+echo_core = { path = "../echo_core" }
+echo_poseidon2b = { path = "../echo_poseidon2b" }
+echo_tx = { path = "../echo_tx" }
+echo_fri = { path = "../echo_fri" }
+echo_fri_binius = { path = "../echo_fri_binius" }
+rayon = "1.10"
+libmdbx = "0.6"
+bincode = "1"
+serde = { version = "1", features = ["derive"] }
+
+[dev-dependencies]
+tempfile = "3"
+rayon     = "1.10"

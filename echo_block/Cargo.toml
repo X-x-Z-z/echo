@@ -1,0 +1,13 @@
+[package]
+name = "echo_block"
+version.workspace = true
+edition = "2021"
+license = "Apache-2.0"
+
+[dependencies]
+echo_core       = { path = "../echo_core" }
+echo_poseidon2b = { path = "../echo_poseidon2b" }
+echo_tx         = { path = "../echo_tx" }
+echo_gkr        = { path = "../echo_gkr" }
+echo_chain      = { path = "../echo_chain" }
+echo_recursive  = { path = "../echo_recursive" }

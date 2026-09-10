@@ -1,0 +1,19 @@
+[package]
+name = "echo_soundness"
+version.workspace = true
+edition = "2024"
+license = "Apache-2.0"
+publish = false
+readme = "README.md"
+description = "Executable soundness certificates for the production Lostecho protocol."
+
+[dependencies]
+echo_core = { path = "../echo_core" }
+echo_fri_binius = { path = "../echo_fri_binius" }
+echo_gkr = { path = "../echo_gkr" }
+echo-ivc-core = { path = "../echo_ivc_core" }
+echo_poseidon2b = { path = "../echo_poseidon2b" }
+echo_recursive = { path = "../echo_recursive" }
+num-bigint = "0.4"
+num-rational = "0.4"
+num-traits = "0.2"

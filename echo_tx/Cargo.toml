@@ -1,0 +1,10 @@
+[package]
+name = "echo_tx"
+version.workspace = true
+edition = "2021"
+license = "Apache-2.0"
+
+[dependencies]
+echo_core = { path = "../echo_core" }
+echo_poseidon2b = { path = "../echo_poseidon2b" }
+serde = { version = "1", features = ["derive"] }

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Lostecho
+Comment=Private proof-native wallet
+Exec=/usr/lib/lostecho/lostecho-gui
+Icon=org.lostecho.wallet
+Terminal=false
+Categories=Finance;Network;
+StartupNotify=true
+StartupWMClass=org.lostecho.wallet

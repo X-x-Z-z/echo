@@ -1,0 +1,88 @@
+[package]
+name = "echo_node"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[features]
+isolated-v1-1-testnet = ["echo_chain/isolated-v1-1-testnet"]
+
+# A separately named executable for explicit local workload fixtures. The
+# regular daemon target is never overwritten when this example is built.
+[[example]]
+name = "isolated_v1_1_node"
+path = "src/main.rs"
+required-features = ["isolated-v1-1-testnet"]
+
+# --- Daemon ---
+[[bin]]
+name = "lostecho"
+path = "src/main.rs"
+
+# --- CLI client ---
+[[bin]]
+name = "lostecho-cli"
+path = "src/bin/echo_cli.rs"
+
+[dependencies]
+echo_chain      = { path = "../echo_chain" }
+echo_block      = { path = "../echo_block" }
+echo_recursive  = { path = "../echo_recursive" }
+echo_tx         = { path = "../echo_tx" }
+echo_poseidon2b = { path = "../echo_poseidon2b" }
+echo_gkr        = { path = "../echo_gkr" }
+echo_core       = { path = "../echo_core" }
+echo_mempool    = { path = "../echo_mempool" }
+echo_miner      = { path = "../echo_miner" }
+echo-ivc-core   = { path = "../echo_ivc_core" }
+echo_p2p        = { path = "../echo_p2p" }
+echo_rpc        = { path = "../echo_rpc" }
+
+# Async runtime
+tokio              = { workspace = true }
+tracing            = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+# Serialization
+serde              = { workspace = true }
+serde_json         = { workspace = true }
+bincode            = "1"
+
+# Error handling
+anyhow             = { workspace = true }
+thiserror          = { workspace = true }
+
+# CLI
+clap    = { version = "4", features = ["derive", "env"] }
+toml    = "0.8"
+hex     = "0.4"
+blake3  = "1"
+
+# Networking
+libp2p  = { version = "0.55", features = ["tokio", "tcp", "noise", "yamux", "gossipsub", "request-response", "identify", "ping", "macros"] }
+futures = "0.3"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+
+# Wallet security: key derivation, zeroization, and owner-only file handling
+rand             = "0.8"
+zeroize          = { version = "1", features = ["zeroize_derive"] }
+libc             = "0.2"
+
+# Memory: jemalloc as global allocator.
+# glibc malloc retains freed pages from large proof-generation allocations (FRI/NTT Vecs)
+# indefinitely, causing 3-4 GB RSS on full nodes. jemalloc returns memory to
+# the OS aggressively via background threads (dirty_decay_ms=1000).
+
+[target.'cfg(unix)'.dependencies]
+tikv-jemallocator = { version = "0.6", features = ["background_threads"] }
+
+[dev-dependencies]
+bench_prover = { path = "../bench_prover" }
+tempfile = "3"
+static_assertions = "1.1"
+
+[build-dependencies]
+echo_recursive  = { path = "../echo_recursive" }
+echo_miner      = { path = "../echo_miner" }
+echo-ivc-core   = { path = "../echo_ivc_core" }
+zstd            = "0.13"
