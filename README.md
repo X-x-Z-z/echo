@@ -1,4 +1,4 @@
-# Lostecho ↻ 
+# Lostecho ↻
 
 **Proof-native Layer 1 ordered by proof of work.**
 
